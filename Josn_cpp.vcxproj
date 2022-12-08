@@ -139,15 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="JsonElement.cpp" />
-    <ClCompile Include="Parser.cpp" />
-    <ClCompile Include="Scanner.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="src\JsonElement.cpp" />
+    <ClCompile Include="src\Parser.cpp" />
+    <ClCompile Include="src\Scanner.cpp" />
+    <ClCompile Include="src\test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JsonElement.h" />
-    <ClInclude Include="Parser.h" />
-    <ClInclude Include="Scanner.h" />
+    <ClInclude Include="src\JsonElement.h" />
+    <ClInclude Include="src\Parser.h" />
+    <ClInclude Include="src\Scanner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

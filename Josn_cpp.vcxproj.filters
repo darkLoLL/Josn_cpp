@@ -15,27 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JsonElement.cpp">
+    <ClCompile Include="src\JsonElement.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.cpp">
+    <ClCompile Include="src\Parser.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Scanner.cpp">
+    <ClCompile Include="src\Scanner.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="src\test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JsonElement.h">
+    <ClInclude Include="src\JsonElement.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
+    <ClInclude Include="src\Parser.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Scanner.h">
+    <ClInclude Include="src\Scanner.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
