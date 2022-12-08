@@ -56,8 +56,8 @@ namespace json {
 		char Peek();
 		char Peeknext();
 
-		float ScanNumber();
-		std::string ScanString();
+		void ScanNumber();
+		void ScanString();
 		void ScanTrue();
 		void ScanFalse();
 		void Scannull();

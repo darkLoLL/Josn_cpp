@@ -99,17 +99,16 @@ namespace json {
 		return _source[ptr + 1];
 	}
 
-	float Scanner::ScanNumber()
+	void Scanner::ScanNumber()
 	{
 		size_t pos = this->ptr;
 		while (IsDigit(Peek()))
 		{
 			Advance();
 		}
-		return 0.0f;
 	}
 
-	std::string Scanner::ScanString()
+	void Scanner::ScanString()
 	{
 		size_t pos = this->ptr;
 
