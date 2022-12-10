@@ -42,8 +42,11 @@ namespace json {
 
 		Scanner(const std::string& source);
 		Scanner();
+
 		JsonTokenType Scan();
 
+		std::string getstring() const;
+		float getnumber() const;
 	private:
 		std::string _source;
 		size_t ptr;

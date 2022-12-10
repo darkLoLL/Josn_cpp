@@ -63,6 +63,14 @@ namespace json {
 		}
 		return JsonTokenType();
 	}
+	std::string Scanner::getstring() const
+	{
+		return this->value_string;
+	}
+	float Scanner::getnumber() const
+	{
+		return this->value_number;
+	}
 	bool Scanner::AtEnd()
 	{
 		if (ptr >= _source.length())
@@ -92,7 +100,7 @@ namespace json {
 
 	char Scanner::Peeknext()
 	{
-		if (ptr + 1 >= _source.length())
+		if (this->AtEnd())
 		{
 			return '\0';
 		}
@@ -101,11 +109,21 @@ namespace json {
 
 	void Scanner::ScanNumber()
 	{
-		size_t pos = this->ptr;
+		size_t pos = this->ptr - 1;
 		while (IsDigit(Peek()))
 		{
 			Advance();
 		}
+		if (Peek() == '.' && this->IsDigit(this->Peeknext()))
+		{
+			Advance();
+			while (this->IsDigit(Peek()))
+			{
+				Advance();
+			}
+		}
+
+		value_number = std::atof(_source.substr(pos, ptr - pos).c_str());
 	}
 
 	void Scanner::ScanString()
@@ -162,6 +180,6 @@ namespace json {
 
 	bool Scanner::IsDigit(char c)
 	{
-		return '0' <= c && c <= '9';
+		return ('0' <= c && c <= '9') || c == 'e' || c == 'E';
 	}
 }
