@@ -1,3 +1,5 @@
+#include <string>
+#include <stdexcept>
 #include "Scanner.h"
 
 namespace json {

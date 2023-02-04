@@ -1,43 +1,29 @@
 #ifndef _SCANNER_H
 #define _SCANNER_H
 
-#include <string>
-#include <stdexcept>
-
 namespace json {
 
 	class Scanner
 	{
 	public:
 		enum class JsonTokenType {
-			///< char {
-			BEGIN_OBJECT,
-			///< char }
-			END_OBJECT, 
+			BEGIN_OBJECT, //< char {
+			END_OBJECT, //< char }
 
-			///< char [
-			BEGIN_ARRAY,
-			///< char ]
-			END_ARRAY,
+			BEGIN_ARRAY, //< char [
+			END_ARRAY, //< char ]
 
-			///< number
-			VALUE_NUMBER,
-			///< string
-			VAlUE_STRING,
+			VALUE_NUMBER, //< number
+			VAlUE_STRING, //< string
 			
-			///< true
-			LITERAL_TRUE,
-			//< false
-			LITERAL_FALSE,
-			///< null
-			LITERAL_NULL,
+			LITERAL_TRUE, //< true
+			LITERAL_FALSE, //< false
+			LITERAL_NULL, //< null
 
-			///< char :
-			SEP_COLON,
-			///< char ,
-			SEP_COMMA,
-			///< EOF
-			END_OF_SOURCE 
+			SEP_COLON, //< char :
+			SEP_COMMA, //< char ,
+			
+			END_OF_SOURCE //< EOF
 		};
 
 		Scanner(const std::string& source);

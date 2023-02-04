@@ -1,43 +1,30 @@
 #include <iostream>
-#include "Scanner.h"
+
+class pason {
+public:
+	pason(int i) {
+		std::cout << "pason(int& i)" << std::endl;
+	}
+	pason(pason&& i) noexcept {
+		std::cout << "pason(int&& i)" << std::endl;
+	}
+	pason(const pason& i) {
+		std::cout << "pason(int& i)" << std::endl;
+	}
+	~pason()
+	{
+		std::cout << "~pason" << std::endl;
+	}
+};
+
+pason fun() {
+	int i = 12;
+	pason son(i);
+	return son;
+}
 
 int main() {
-	const char* c = "  {\"name\": 1.2e10, \"age\": 12}";
-	json::Scanner scan(c);
-	json::Scanner::JsonTokenType type;
-	while ((type = scan.Scan()) != json::Scanner::JsonTokenType::END_OF_SOURCE)
-	{
-		switch (type)
-		{
-		case json::Scanner::JsonTokenType::BEGIN_OBJECT:
-			break;
-		case json::Scanner::JsonTokenType::END_OBJECT:
-			break;
-		case json::Scanner::JsonTokenType::BEGIN_ARRAY:
-			break;
-		case json::Scanner::JsonTokenType::END_ARRAY:
-			break;
-		case json::Scanner::JsonTokenType::VALUE_NUMBER:
-			std::cout << scan.getnumber() << std::endl;
-			break;
-		case json::Scanner::JsonTokenType::VAlUE_STRING:
-			std::cout << scan.getstring() << std::endl;
-			break;
-		case json::Scanner::JsonTokenType::LITERAL_TRUE:
-			break;
-		case json::Scanner::JsonTokenType::LITERAL_FALSE:
-			break;
-		case json::Scanner::JsonTokenType::LITERAL_NULL:
-			break;
-		case json::Scanner::JsonTokenType::SEP_COLON:
-			break;
-		case json::Scanner::JsonTokenType::SEP_COMMA:
-			break;
-		case json::Scanner::JsonTokenType::END_OF_SOURCE:
-			break;
-		default:
-			break;
-		}
-	}
+	int i;
+	pason pa(fun());
 	return 0;
 }
